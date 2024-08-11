@@ -1,23 +1,26 @@
 
 import { ReactNode } from 'react';
-import { StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
 
 export default function StyledText({
     blue,
     bold,
     children,
     big, 
-    small
+    small,
+    childStyles
   }: {
     blue?: boolean;
     bold?: boolean;
     children: ReactNode;
     big?: boolean;
     small?: boolean;
+    childStyles?: StyleProp<TextStyle>;
   }) {
 
     const textStyles = [
         style.text,
+        childStyles,
         blue && style.blue,
         bold && style.bold,
         big && style.big,

@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants'
-import { StyleSheet, Text, View } from 'react-native';
-import RepositoryMapList from './RepositoryMapList';
+import {View, Text } from 'react-native';
 import RepositoryFlatList from './RepositoryFlatList';
-import StyledText from './StyledText';
-
+import AppBar from './AppBar';
+import {Navigate, Route, Routes} from 'react-router-native';
 
 export default function Main() {
     return (
@@ -12,9 +11,16 @@ export default function Main() {
 
         {/* <RepositoryMapList /> */}
 
-        <RepositoryFlatList />
+        <AppBar />
 
-        <StyledText bold blue big> Texto extilizado reusable </StyledText>
+        
+        <Routes>
+          <Route path='/' element={<RepositoryFlatList />} />
+          <Route path='/signin' element={<Text>Sign In</Text>} />
+          <Route path='*' element={<Navigate to='/' />} />            
+        </Routes>
+
+
 
 
       </View>

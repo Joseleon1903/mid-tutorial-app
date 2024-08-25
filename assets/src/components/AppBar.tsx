@@ -1,4 +1,3 @@
-import Constants from 'expo-constants'
 import {View , StyleSheet} from 'react-native';
 import StyledText from './StyledText';
 import { ReactNode } from 'react';
@@ -30,6 +29,10 @@ export default function AppBar() {
       <View style={{ flexGrow: 0, flexDirection: 'row',  backgroundColor: 'gray'} }>
         <AppBarTab to={'/'} >Repository</AppBarTab>
         <AppBarTab to={'/signin'}  >Sing in</AppBarTab>
+        <AppBarTab to={'/video-player'}  > Video Player</AppBarTab>
+        <AppBarTab to={'/slider'}  >Slider</AppBarTab>
+
+        
       </View>
     );
   }
@@ -38,13 +41,13 @@ export default function AppBar() {
 const style = StyleSheet.create({
 
     default:{
-        fontSize: 25, 
+        fontSize: 15, 
         color: 'white',
         marginHorizontal: 10
     },
     active:{
         color: 'yellow',
-        fontSize: 25,
+        fontSize: 15,
         marginHorizontal: 10
     }
   
